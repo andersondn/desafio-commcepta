@@ -16,7 +16,7 @@ body {
 }
 
 .container {
-  max-width: 1140px;
+  max-width: 1410px;
   margin: 0 auto;
   padding: 0 10px;
 }
@@ -30,7 +30,6 @@ body {
 
 .logo {
   padding: 10px 0;
-  /* width: 100%; */
 }
 
 /* Menu */
@@ -72,4 +71,60 @@ body {
   .menu-toggle {
     display: block;
   }
+}
+
+/* Main */
+
+.employee-grid {
+  padding: 4rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 1rem;
+}
+
+.employee-card {
+  background-color: #fff;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  box-shadow:  0 4px 8px #00000020;
+  background-color: #F0F1EF;
+  position: relative;
+}
+.employee-photo{
+  position: relative;
+}
+.employee-photo img{
+  width: 140px;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.employee-photo .badge{
+  color: #092331;
+  background-color: #4DD2D2;
+  font-weight: bold;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.employee-details{
+  padding: 0 1rem;
+}
+.employee-details .name{
+  font-weight: bold;
+  font-size: 24px;
+  color: #092432;
+}
+.employee-details .role{
+  font-weight: 300;
+  font-size: 20px;
+  color: #707070
 }
