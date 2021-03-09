@@ -26,6 +26,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  height: 120px;
 }
 
 .logo {
@@ -73,12 +74,11 @@ body {
   }
 }
 
-/* Main */
+/* Grade de funcionários */
 
 .employee-grid {
-  padding: 4rem 0;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));;
   grid-gap: 1rem;
 }
 
@@ -115,16 +115,27 @@ body {
   align-items: center;
   border-radius: 50%;
 }
-.employee-details{
+.employee-card .details{
   padding: 0 1rem;
 }
-.employee-details .name{
+.details .name{
   font-weight: bold;
   font-size: 24px;
   color: #092432;
 }
-.employee-details .role{
+.details .role{
   font-weight: 300;
   font-size: 20px;
   color: #707070
+}
+
+.employee-details{
+  margin:2rem 0
+}
+.employee-card.active{
+  background: #002B50;
+  color: #fff  !important;
+}
+.employee-card.active .details .name, .employee-card.active .details .role{
+color: #fff;
 }
