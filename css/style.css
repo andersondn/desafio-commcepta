@@ -129,13 +129,33 @@ body {
   color: #707070
 }
 
-.employee-details{
-  margin:2rem 0
-}
+
 .employee-card.active{
   background: #002B50;
   color: #fff  !important;
 }
 .employee-card.active .details .name, .employee-card.active .details .role{
 color: #fff;
+}
+
+
+
+.employee-details{
+  margin:2rem 0;
+  transform-style: preserve-3d;
+
+}
+.animate-card{
+  background-color: red;
+  animation-name: flip ;
+  animation-play-state:running;
+  animation-iteration-count:initial;
+  animation-duration: .5s;
+}
+
+@keyframes example {
+  0% {transform: rotateX(0deg);}
+  50% {transform: rotateX(90deg);}
+  100% {transform: rotateX(0deg);}
+
 }

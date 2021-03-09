@@ -29,9 +29,15 @@ function showData(data) {
 
 }
 
-function update(event) {
-  event.preventDefault()
-console.log("fui clicado", event)
+function updateDetailsCard(employeeCard) {
+  const { employeeId } = employeeCard.dataset;
+  const detailCard = document.querySelector('.employee-details');
+
+    detailCard.classList.remove('animate-card');
+    detailCard.offsetWidth;
+    detailCard.classList.add('animate-card');
+
+
 }
 
 
@@ -59,13 +65,12 @@ document.addEventListener("DOMContentLoaded", async () => {
   document.querySelectorAll('.employee-grid .employee-card').forEach(item => {
     item.addEventListener('click', event => {
       const employeeCard = event.target.closest(".employee-card")
-      const { employeeId } = employeeCard.dataset;
       //Remove a classe "active" dos outros itens
       event.stopPropagation()
       document.querySelectorAll('.employee-card').forEach(item => {
         item.classList.remove('active');
       })
-
+      updateDetailsCard(employeeCard)
       employeeCard.classList.add('active');
 
     })
