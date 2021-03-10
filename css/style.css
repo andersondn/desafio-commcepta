@@ -26,7 +26,7 @@ body {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  height: 120px;
+  min-height: 120px;
 }
 
 .logo {
@@ -38,7 +38,7 @@ body {
 .menu nav a {
   color: #FFF;
   font-size: 22px;
-  padding: 10px 15px;
+  padding: 10px 20px;
   text-decoration: none;
 }
 
@@ -78,18 +78,18 @@ body {
 
 .employee-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));;
-  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));;
+  grid-gap: 30px;
 }
 
 .employee-card {
-  background-color: #fff;
-  padding: 1rem;
+  padding: 28px 34px;
   display: flex;
   align-items: center;
   box-shadow:  0 4px 8px #00000020;
   background-color: #F0F1EF;
   position: relative;
+  cursor: pointer;
 }
 .employee-photo{
   position: relative;
@@ -116,7 +116,7 @@ body {
   border-radius: 50%;
 }
 .employee-card .details{
-  padding: 0 1rem;
+  padding: 0 20px;
 }
 .details .name{
   font-weight: bold;
@@ -127,8 +127,11 @@ body {
   font-weight: 300;
   font-size: 20px;
   color: #707070
-}
 
+}
+.employee-card{
+  transition: background .5s;
+}
 
 .employee-card.active{
   background: #002B50;
@@ -138,24 +141,62 @@ body {
 color: #fff;
 }
 
-
-
 .employee-details{
   margin:2rem 0;
   transform-style: preserve-3d;
 
 }
+
+
+.details-info{
+  display: grid;
+
+  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 120px auto;
+  grid-gap: 10px 10px;
+}
+.details-info p{
+  align-self: center;
+  justify-self: end;
+  font-weight: 300;
+  font-size: 20px;
+  /* padding: 0 12px; */
+  color: #707070;
+
+}
+.details-info .name, .details-info .role, .details-info .age {
+  color:#092432;
+  font-size: 24px;
+  font-weight: bold;
+  
+}
+/* Animação do card */
 .animate-card{
-  background-color: red;
   animation-name: flip ;
   animation-play-state:running;
   animation-iteration-count:initial;
   animation-duration: .5s;
 }
 
-@keyframes example {
+@keyframes flip {
   0% {transform: rotateX(0deg);}
   50% {transform: rotateX(90deg);}
   100% {transform: rotateX(0deg);}
 
 }
+
+/* Ajusta algumas margens no mobile */
+
+@media only screen and (max-width: 768px) {
+  .employee-details .employee-card {
+      flex-direction: column;
+      
+  }
+  .details-info{
+    grid-template-columns: 80px auto;
+  }
+  .employee-card {
+    padding: 20px;
+  }
+} 
+
